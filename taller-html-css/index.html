@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Nombre del sitio</title> 
+  <link rel="stylesheet" href="css/styles.css"> 
+</head> 
+<body> 
+  
+  <header>
+    <h1>Nombre del sitio</h1>
+    <p>Tu eslogan o descripción breve aquí</p>
+  </header> 
+  
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav> 
+  
+  <main> 
+    <!-- Sección Inicio -->
+    <section id="inicio">
+      <h2>Bienvenido a nuestro sitio</h2>
+      <p>Descubre todo lo que podemos hacer por ti.</p>
+    </section> 
+    
+    <!-- Sección Servicios (Con las 4 tarjetas reutilizables) -->
+    <section id="servicios">
+      <h2>Nuestros Servicios</h2>
+      <p>Conoce nuestras soluciones diseñadas a tu medida.</p>
+      
+      <div class="cards">
+        <!-- Tarjeta 1 -->
+        <article class="card">
+          <h3>Servicio 1</h3>
+          <p>Descripción breve del primer servicio ofrecido con alta calidad.</p>
+          <a href="#" class="btn">Saber más</a>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="card">
+          <h3>Servicio 2</h3>
+          <p>Descripción breve del segundo servicio ofrecido con alta calidad.</p>
+          <a href="#" class="btn">Saber más</a>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="card">
+          <h3>Servicio 3</h3>
+          <p>Descripción breve del tercer servicio ofrecido con alta calidad.</p>
+          <a href="#" class="btn">Saber más</a>
+        </article>
+
+        <!-- Tarjeta 4 (Prueba de reutilización) -->
+        <article class="card">
+          <h3>Servicio 4</h3>
+          <p>Descripción breve del cuarto servicio añadido para comprobar la flexibilidad.</p>
+          <a href="#" class="btn">Saber más</a>
+        </article>
+      </div>
+    </section> 
+    
+    <!-- Sección Nosotros -->
+    <section id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos un equipo comprometido con la excelencia y la innovación.</p>
+    </section> 
+    
+    <!-- Sección Contacto (Formulario) -->
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Ponte en contacto con nosotros completando el siguiente formulario.</p>
+      
+      <form action="#" method="POST">
+        <!-- Nombre -->
+        <div class="form-group">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <!-- Correo -->
+        <div class="form-group">
+          <label for="correo">Correo electrónico *</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+
+        <!-- Teléfono -->
+        <div class="form-group">
+          <label for="telefono">Teléfono (opcional)</label>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+
+        <!-- Asunto -->
+        <div class="form-group">
+          <label for="asunto">Asunto *</label>
+          <input type="text" id="asunto" name="asunto" required>
+        </div>
+
+        <!-- Mensaje -->
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+
+        <!-- Aceptación -->
+        <div class="checkbox-group">
+          <input type="checkbox" id="aceptacion" name="aceptacion" required>
+          <label for="aceptacion">Acepto los términos y condiciones *</label>
+        </div>
+
+        <!-- Envío -->
+        <div class="form-group">
+          <button type="submit" class="btn">Enviar mensaje</button>
+        </div>
+      </form>
+    </section> 
+  </main> 
+  
+  <footer>
+    <p>&copy; 2026 Nombre del sitio. Todos los derechos reservados.</p>
+  </footer> 
+
+</body> 
+</html>

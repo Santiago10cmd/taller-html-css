@@ -1,0 +1,250 @@
+/* ==========================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ================================          */
+:root {
+  --color-primary: #17365D;   
+  --color-accent: #ED7D31;    
+  --color-bg: #F7F8FA;        
+  --color-text: #1F2937;      
+  --color-surface: #FFFFFF;   
+  --color-border: #E5E7EB;    
+  
+  --space: 1rem;              
+  --border-radius: 8px;       
+  --transition: 0.25s ease-in-out;
+}
+
+* { 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tipografía general */
+h1, h2, h3, h4 {
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* Accesibilidad global para elementos interactivos enfocados por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Estilos básicos para Header, Nav y Footer */
+header, footer {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 2rem var(--space);
+}
+
+header h1, footer p {
+  color: #FFFFFF;
+  margin: 0;
+}
+
+nav {
+  background-color: #0f2441;
+  padding: 0.5rem var(--space);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+/* Estructura general de secciones */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem var(--space);
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+
+/* ==========================================
+   2. COMPONENTES REUTILIZABLES (Tarjetas y Botones)
+   ================================          */
+
+/* Contenedor de Tarjetas (Grid flexible responsivo) */
+.cards {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Clase reutilizable: .card */
+.card {
+  flex: 1 1 280px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: calc(var(--space) * 1.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
+
+.card .btn {
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+/* Clase reutilizable para botones (.btn) */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  background-color: #d66c24; 
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+
+/* ==========================================
+   3. ESTILOS DEL FORMULARIO DE CONTACTO
+   ================================          */
+#contacto {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: var(--color-surface);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto input[type="tel"],
+#contacto textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--border-radius) / 2);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: #FFFFFF;
+  transition: border-color var(--transition);
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  margin-bottom: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+ 
+  nav ul { 
+    flex-direction: column; 
+    align-items: center;
+    gap: 0.75rem;
+  } 
+
+
+  .hero { 
+    text-align: center; 
+  } 
+
+  
+  .cards { 
+    flex-direction: column; 
+  } 
+
+  
+  main {
+    padding: 1rem var(--space);
+  }
+
+  #contacto form {
+    padding: 1.25rem;
+  }
+}
